@@ -13,6 +13,17 @@ Organizes FiveM personal vehicle tickets into an embed with the link, department
    npm start
    ```
 
+### On a Linux VM (runs 24/7, restarts automatically)
+
+```
+git clone <your repo url> ticket-bot
+cd ticket-bot
+bash deploy/install.sh
+```
+
+It asks for the token once (saved to `.env` on the VM only) and installs a systemd service that starts on boot and restarts on crash.
+Logs: `journalctl -u ticket-bot -f`. To update after pushing new code: `bash deploy/update.sh`.
+
 Invite link (replace CLIENT_ID):
 `https://discord.com/oauth2/authorize?client_id=CLIENT_ID&scope=bot+applications.commands&permissions=84992`
 
